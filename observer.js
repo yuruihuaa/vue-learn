@@ -28,8 +28,8 @@ class Observer {
                 set(newVal) {
                     if (newVal === value) return
                     console.log(`修改属性: ${keys[i]}: ${newVal}`)
-                    dep.notify()
                     value = newVal
+                    dep.notify()
                 }
             })
         }
