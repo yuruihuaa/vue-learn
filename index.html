@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+<script type="module">
+    import CustomVue from "./vue.js"
+    let data = {
+        message: 'Hello Vue!'
+    }
+    let app = new CustomVue({
+        data: data
+    })
+
+    // let app = new Vue({
+    //     el: '#app',
+    //     data: {
+    //         message: 'Hello Vue!'
+    //     }
+    // })
+</script>
+</body>
+</html>
