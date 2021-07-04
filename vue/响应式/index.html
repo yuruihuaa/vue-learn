@@ -1,10 +1,18 @@
 <script type="module">
     import Vue from "./vue.js"
-    let data = {
-        age: 20
-    }
-    new Vue({
-        data: data
+    import Watcher from "./watcher.js";
+    // 创建一个Vue实例，将data属性值普通对象改造成响应式对象
+    let vm = new Vue({
+        data: {  // 不支持使用data: [/* */]这种形式
+            obj: {
+                value: 4
+            },
+            arr: [1, 3]
+        }
     })
-    data.age = 60
+
+    // 改变obj
+    vm.obj.value = 60
+    // 出入arr
+    vm.arr.push(5)
 </script>

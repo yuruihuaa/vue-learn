@@ -1,7 +1,7 @@
 export default class Dep {
     static target
     constructor() {
-        this.subs = []  // 保存Watcher
+        this.subs = []  // 保存Watcher，先不考虑去重
     }
 
     addSub(sub) {
