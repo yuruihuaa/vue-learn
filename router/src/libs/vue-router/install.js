@@ -1,3 +1,5 @@
+import View from './components/view'
+
 export default function install(Vue) {
     const isDef = v => v !== undefined
     Vue.mixin({
@@ -5,7 +7,7 @@ export default function install(Vue) {
             if (isDef(this.$options.router)) {
                 this._routerRoot = this
                 this._router = this.$options.router
-                this._router.init()
+                this._router.init(this)
             } else {
                 this._routerRoot = (this.$parent && this.$parent._routerRoot) || this
             }
@@ -18,6 +20,5 @@ export default function install(Vue) {
         }
     })
 
-
-
+    Vue.component('RouterView', View)
 }
