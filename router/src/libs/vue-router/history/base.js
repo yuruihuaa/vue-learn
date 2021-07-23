@@ -12,8 +12,20 @@ export class History {
         this.current = START
     }
 
-    transitionTo(location, onComplete, onAbort) {
+    transitionTo(location, onComplete) {
         let route = this.router.match(location, this.current)
-        console.log(route, onComplete, onAbort)
+        this.updateRoute(route)
+        if (onComplete) {
+            onComplete()
+        }
+    }
+
+    listen(cb) {
+        this.cb = cb
+    }
+
+    updateRoute(route) {
+        this.current = route
+        this.cb && this.cb(route)
     }
 }

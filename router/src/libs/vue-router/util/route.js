@@ -4,7 +4,7 @@ export function createRoute(record, location) {
         meta: (record && record.meta) || {},
         path: location.path || '/',
         hash: location.hash || '',
-        matched: record ? formatMath(record) : []
+        matched: record ? formatMath(record) : []  // matched比较重要
     }
 
     return Object.freeze(route)

@@ -33,7 +33,7 @@ const routes = [    // 路由表配置，包括主页和关于页
 // 创建VueRouter实例，单例模式
 const router = new VueRouter({
   routes,
-  mode: 'hash'  // or mode: 'history' 配置路由模式，支持hash，history，abstract
+  mode: 'history'  // or mode: 'history' 配置路由模式，支持hash，history，abstract
 })
 // 导出
 export default router

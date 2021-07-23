@@ -5,7 +5,7 @@ export function createMatcher(routes) {
     const { pathList, pathMap, nameMap } = createRouteMap(routes)
 
     function match(raw) {
-        const location = { path: raw }
+        const location = typeof raw === 'string' ? { path: raw } : raw
         if (raw) {
             for (let i = 0; i < pathList.length; i++) {
                 const path = pathList[i]

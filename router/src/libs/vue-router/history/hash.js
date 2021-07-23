@@ -7,6 +7,12 @@ export class HashHistory extends History {
         ensureSlash()
     }
 
+    setupListeners() {
+        window.addEventListener('hashchange', () => {
+            this.transitionTo(getHash(), null, null)
+        })
+    }
+
     getCurrentLocation() {
         return getHash()
     }
